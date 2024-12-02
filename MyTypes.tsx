@@ -36,4 +36,5 @@ export interface MyHTMLProps {
     fitBound: boolean;
     showMarkerClicked?: boolean;
     showAttribution?: boolean;
+    mapOptions?: Record<string, any>;
 }
