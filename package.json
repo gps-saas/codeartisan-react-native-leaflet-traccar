@@ -1,7 +1,7 @@
 {
-  "name": "@netizen-teknologi/react-native-maps-leaflet",
+  "name": "@gps-saas/codeartisan-react-native-leaflet-traccar",
   "version": "1.0.4",
-  "description": "React Native Maps Leaflet brings powerful, interactive maps to your React Native apps using Leaflet. Add custom markers, popups, and tile layers. Perfect for real estate, travel, delivery tracking, and logistics. Compatible with iOS and Android, it provides a seamless and dynamic map experience.",
+  "description": "Codeartisan React Native Leaflet Traccar React is a improvement of @netizen-teknologi/react-native-maps-leaflet which brings powerful, interactive maps to your React Native Traccar Custom app using Leaflet. Add custom markers, popups, and tile layers. Perfect for real estate, travel, delivery tracking, and logistics. Compatible with iOS and Android, it provides a seamless and dynamic map experience.",
   "main": "index.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,20 +10,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Netizen-Teknologi/react-native-maps-leaflet.git"
+    "url": "https://github.com/gps-saas/codeartisan-react-native-leaflet-traccar.git"
   },
   "keywords": [
     "react-native",
     "leaflet",
     "maps",
+    "traccar",
+    "custom traccar mobile app",
     "react-native-maps",
     "react-native-maps-leaflet"
   ],
-  "author": "rinaldycodes",
+  "author": "gps-saas",
   "license": "ISC",
-  "homepage": "https://netizen-teknologi.github.io/react-native-maps-leaflet/",
+  "homepage": "https://github.com/gps-saas/codeartisan-react-native-leaflet-traccar",
   "bugs": {
-    "url": "https://github.com/Netizen-Teknologi/react-native-maps-leaflet/issues"
+    "url": "https://github.com/gps-saas/codeartisan-react-native-leaflet-traccar/issues"
   },
   "dependencies": {
     "react": "^18.2.0",
