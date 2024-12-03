@@ -24,5 +24,10 @@ body, html {
     z-index: 2; /* Z-index lebih tinggi agar footer di atas peta */
 }
 
+  .custom-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 `;

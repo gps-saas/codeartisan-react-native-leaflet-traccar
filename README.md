@@ -11,8 +11,8 @@ Email: don@codeartisan.cloud
 
 <!-- [![npm version](https://img.shields.io/npm/v/@netizen-teknologi/react-native-maps-leaflet)](https://www.npmjs.com/package/@gps-saas/codeartisan-react-native-leaflet-traccar)
 [![GitHub stars](https://img.shields.io/github/stars/@netizen-teknologi/react-native-maps-leaflet)](https://github.com/gps-saas/codeartisan-react-native-leaflet-traccar/stargazers)
-[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/gps-saas/codeartisan-react-native-leaflet-traccar/issues)
-[![Downloads](https://img.shields.io/npm/dt/@netizen-teknologi/react-native-maps-leaflet.svg)](https://www.npmjs.com/package/@gps-saas/codeartisan-react-native-leaflet-traccar) -->
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.?style=flat)](https://github.com/gps-saas/codeartisan-react-native-leaflet-traccar/issues)
+[![Downloads](https://img.shields.io/npm/dt/@netizen-teknologi/react-native-maps-leaflet.)](https://www.npmjs.com/package/@gps-saas/codeartisan-react-native-leaflet-traccar) -->
 
 **CodeArtisan React Native Leaflet Traccar** is an improvement of @netizen-teknologi/react-native-maps-leaflet which brings the power of the popular [Leaflet](https://leafletjs.com/) JavaScript library to React Native. Whether you're building a delivery app, a location-based service, or a data visualization tool, you can easily add interactive maps with custom markers, tile layers, and more!
 
@@ -77,6 +77,33 @@ rm -rf node_modules ios android
 npx expo prebuild
 npx eas build --profile development --platform android
 yarn start
+```
+
+Create a resources folder and move your icons to that folder and load this icons on your app
+
+```javascript
+import bicycle from "./resources/newIcons/bicycle.png";
+import boat from "./resources/newIcons/boat.png";
+import bus from "./resources/newIcons/bus.png";
+import car from "./resources/newIcons/car.png";
+import camper from "./resources/newIcons/camper.png";
+import crane from "./resources/newIcons/crane.png";
+import helicopter from "./resources/newIcons/helicopter.png";
+import motorcycle from "./resources/newIcons/motorcycle.png";
+import offroad from "./resources/newIcons/offroad.png";
+import person from "./resources/newIcons/person.png";
+import pickup from "./resources/newIcons/pickup.png";
+import plane from "./resources/newIcons/plane.png";
+import scooter from "./resources/newIcons/scooter.png";
+import ship from "./resources/newIcons/ship.png";
+import tractor from "./resources/newIcons/tractor.png";
+import train from "./resources/newIcons/train.png";
+import tram from "./resources/newIcons/tram.png";
+import trolleybus from "./resources/newIcons/trolleybus.png";
+import truck from "./resources/newIcons/truck.png";
+import van from "./resources/newIcons/van.png";
+import default from "./resources/newIcons/default.png";
+import animal from "./resources/newIcons/animal.png";
 ```
 
 Install that apk on your android device and point to your expo server.

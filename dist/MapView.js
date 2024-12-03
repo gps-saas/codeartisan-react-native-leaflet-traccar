@@ -42,49 +42,19 @@ const defaultFunction = () => { };
 function MapView({ debug = false, markerCenter = false, markers = [], region = {
     latitude: -6.174929921156404,
     longitude: 106.8271114327312,
-}, zoom = 15, fitBound = false, showMarkerClicked = false, showAttribution = true, mapOnClick = defaultFunction, mapOnMove = defaultFunction, mapOnMoveEnd = defaultFunction, }) {
+}, zoom = 15, fitBound = false, showMarkerClicked = false, showAttribution = true, mapOnMoveEnd = defaultFunction, }) {
     const { width, height } = (0, react_native_1.useWindowDimensions)();
     const [regionX, setRegionX] = (0, react_1.useState)(region);
     const [markersX, setMarkersX] = (0, react_1.useState)(markers);
-    const webviewRef = (0, react_1.useRef)(null);
-    // Mengupdate marker dan region secara bertahap
     (0, react_1.useEffect)(() => {
         if (JSON.stringify(markers) !== JSON.stringify(markersX)) {
             setMarkersX(markers);
         }
-        if (region.latitude !== (regionX === null || regionX === void 0 ? void 0 : regionX.latitude) || region.longitude !== (regionX === null || regionX === void 0 ? void 0 : regionX.longitude)) {
+        if (region.latitude !== (regionX === null || regionX === void 0 ? void 0 : regionX.latitude) ||
+            region.longitude !== (regionX === null || regionX === void 0 ? void 0 : regionX.longitude)) {
             setRegionX(region);
         }
-        if (debug) {
-            console.log("render MapView", new Date());
-            console.log("MapView markers before update: ", markersX);
-            console.log("MapView markers after update: ", markers);
-            console.log("MapView region before update: ", regionX);
-            console.log("MapView region after update: ", region);
-        }
     }, [markers, region]);
-    // Menghandle pesan yang diterima dari WebView
-    const handleOnMessage = (event) => {
-        const data = JSON.parse(event.nativeEvent.data);
-        if (data.event_name === 'mapOnClick' && mapOnClick !== defaultFunction) {
-            if (debug) {
-                console.log(data.event_name + ": " + JSON.stringify(data));
-            }
-            mapOnClick(data);
-        }
-        if (data.event_name === 'mapOnMove' && mapOnMove !== defaultFunction) {
-            if (debug) {
-                console.log(data.event_name + ": " + JSON.stringify(data));
-            }
-        }
-        if (data.event_name === 'mapOnMoveEnd' && mapOnMoveEnd !== defaultFunction) {
-            if (debug) {
-                console.log(data.event_name + ": " + JSON.stringify(data));
-            }
-            mapOnMoveEnd(data);
-        }
-    };
-    // HTML SOURCE dari MyHTML
     const html = (0, MyHTML_1.MyHTML)({
         region: regionX,
         markers: markersX,
@@ -92,17 +62,13 @@ function MapView({ debug = false, markerCenter = false, markers = [], region = {
         zoom,
         fitBound,
         showMarkerClicked,
-        showAttribution
+        showAttribution,
     });
-    const stylesX = react_native_1.StyleSheet.create({
-        webView: {
-            flex: 1,
-            width,
-            height,
-        },
-    });
-    return (react_1.default.createElement(react_native_webview_1.WebView, { ref: webviewRef, source: { html }, style: stylesX.webView, javaScriptEnabled: true, onMessage: handleOnMessage }));
+    return (react_1.default.createElement(react_native_webview_1.WebView, { source: { html }, style: { width, height }, javaScriptEnabled: true, onMessage: (event) => {
+            const data = JSON.parse(event.nativeEvent.data);
+            if (data.event_name === "mapMoveEnd" &&
+                mapOnMoveEnd !== defaultFunction) {
+                mapOnMoveEnd(data);
+            }
+        } }));
 }
-const styles = react_native_1.StyleSheet.create({
-// Definisi style lainnya jika diperlukan
-});

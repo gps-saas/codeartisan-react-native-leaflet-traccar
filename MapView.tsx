@@ -1,10 +1,17 @@
-import { Dimensions, SafeAreaView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
-import React, { useEffect, useRef, useState } from 'react';
-import { WebView } from 'react-native-webview';
-import { MapViewProps, MarkerProps, RegionProps } from './MyTypes';
-import { MyHTML } from './MyHTML';
+import {
+  Dimensions,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  useWindowDimensions,
+  View,
+} from "react-native";
+import React, { useEffect, useRef, useState } from "react";
+import { WebView } from "react-native-webview";
+import { MapViewProps, MarkerProps, RegionProps } from "./MyTypes";
+import { MyHTML } from "./MyHTML";
 
-const defaultFunction = () => { };
+const defaultFunction = () => {};
 
 export default function MapView({
   debug = false,
@@ -18,59 +25,24 @@ export default function MapView({
   fitBound = false,
   showMarkerClicked = false,
   showAttribution = true,
-
-  mapOnClick = defaultFunction,
-  mapOnMove = defaultFunction,
   mapOnMoveEnd = defaultFunction,
 }: MapViewProps) {
   const { width, height } = useWindowDimensions();
   const [regionX, setRegionX] = useState<RegionProps>(region);
   const [markersX, setMarkersX] = useState<MarkerProps[]>(markers);
-  const webviewRef = useRef(null);
 
-  // Mengupdate marker dan region secara bertahap
   useEffect(() => {
     if (JSON.stringify(markers) !== JSON.stringify(markersX)) {
       setMarkersX(markers);
     }
-    if (region.latitude !== regionX?.latitude || region.longitude !== regionX?.longitude) {
+    if (
+      region.latitude !== regionX?.latitude ||
+      region.longitude !== regionX?.longitude
+    ) {
       setRegionX(region);
-    }
-
-    if (debug) {
-      console.log("render MapView", new Date());
-      console.log("MapView markers before update: ", markersX);
-      console.log("MapView markers after update: ", markers);
-      console.log("MapView region before update: ", regionX);
-      console.log("MapView region after update: ", region);
     }
   }, [markers, region]);
 
-  // Menghandle pesan yang diterima dari WebView
-  const handleOnMessage = (event: any) => {
-    const data = JSON.parse(event.nativeEvent.data);
-    if (data.event_name === 'mapOnClick' && mapOnClick !== defaultFunction) {
-      if (debug) {
-        console.log(data.event_name + ": " + JSON.stringify(data));
-      }
-      mapOnClick(data);
-    }
-
-    if (data.event_name === 'mapOnMove' && mapOnMove !== defaultFunction) {
-      if (debug) {
-        console.log(data.event_name + ": " + JSON.stringify(data));
-      }
-    }
-
-    if (data.event_name === 'mapOnMoveEnd' && mapOnMoveEnd !== defaultFunction) {
-      if (debug) {
-        console.log(data.event_name + ": " + JSON.stringify(data));
-      }
-      mapOnMoveEnd(data);
-    }
-  };
-
-  // HTML SOURCE dari MyHTML
   const html = MyHTML({
     region: regionX,
     markers: markersX,
@@ -78,29 +50,23 @@ export default function MapView({
     zoom,
     fitBound,
     showMarkerClicked,
-    showAttribution
-  });
-
-
-  const stylesX = StyleSheet.create({
-    webView: {
-      flex: 1,
-      width,
-      height,
-    },
+    showAttribution,
   });
 
   return (
     <WebView
-      ref={webviewRef}
       source={{ html }}
-      style={stylesX.webView}
+      style={{ width, height }}
       javaScriptEnabled={true}
-      onMessage={handleOnMessage}
+      onMessage={(event) => {
+        const data = JSON.parse(event.nativeEvent.data);
+        if (
+          data.event_name === "mapMoveEnd" &&
+          mapOnMoveEnd !== defaultFunction
+        ) {
+          mapOnMoveEnd(data);
+        }
+      }}
     />
   );
 }
-
-const styles = StyleSheet.create({
-  // Definisi style lainnya jika diperlukan
-});

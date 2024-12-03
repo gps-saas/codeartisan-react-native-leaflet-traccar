@@ -1,9 +1,11 @@
 export interface MarkerProps {
     latitude: number;
     longitude: number;
+    iconUrl?: string;
+    category: string;
     title?: string;
     description?: string;
-    iconUrl?: string;
+    heading?: number;
 }
 export interface RegionProps {
     latitude: number;
@@ -26,9 +28,9 @@ export interface MyHTMLProps {
     debug?: boolean;
     region: RegionProps;
     markers: MarkerProps[];
-    markerCenter: boolean;
+    markerCenter?: boolean;
     zoom: number;
-    fitBound: boolean;
+    fitBound?: boolean;
     showMarkerClicked?: boolean;
     showAttribution?: boolean;
     mapOptions?: Record<string, any>;
