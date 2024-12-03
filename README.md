@@ -3,17 +3,17 @@ Codeartisan React Native Leaflet Traccar React is an improvement of @netizen-tek
 
 For support:
 
-Whatsapp: +5511934251920
+Whatsapp: +5511934251920 <br />
 Email: don@codeartisan.cloud
 
 # CodeArtisan React Native Leaflet Traccar 🌍
 
-<!--
-[![npm version](https://img.shields.io/npm/v/@netizen-teknologi/react-native-maps-leaflet)](https://www.npmjs.com/package/@netizen-teknologi/react-native-maps-leaflet)
-[![GitHub stars](https://img.shields.io/github/stars/@netizen-teknologi/react-native-maps-leaflet)](https://github.com/netizen-teknologi/react-native-maps-leaflet/stargazers)
-[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/netizen-teknologi/react-native-maps-leaflet/issues)
-[![Downloads](https://img.shields.io/npm/dt/@netizen-teknologi/react-native-maps-leaflet.svg)](https://www.npmjs.com/package/@netizen-teknologi/react-native-maps-leaflet)
--->
+
+[![npm version](https://img.shields.io/npm/v/@netizen-teknologi/react-native-maps-leaflet)](https://www.npmjs.com/package/@gps-saas/codeartisan-react-native-leaflet-traccar)
+[![GitHub stars](https://img.shields.io/github/stars/@netizen-teknologi/react-native-maps-leaflet)](https://github.com/gps-saas/codeartisan-react-native-leaflet-traccar/stargazers)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/gps-saas/codeartisan-react-native-leaflet-traccar/issues)
+[![Downloads](https://img.shields.io/npm/dt/@netizen-teknologi/react-native-maps-leaflet.svg)](https://www.npmjs.com/package/@gps-saas/codeartisan-react-native-leaflet-traccar)
+
 
 **CodeArtisan React Native Leaflet Traccar** is an improvement of @netizen-teknologi/react-native-maps-leaflet which brings the power of the popular [Leaflet](https://leafletjs.com/) JavaScript library to React Native. Whether you're building a delivery app, a location-based service, or a data visualization tool, you can easily add interactive maps with custom markers, tile layers, and more!
 
