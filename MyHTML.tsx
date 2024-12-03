@@ -75,7 +75,7 @@ export const MyHTML = ({
           // Add Layer OpenStreetMap
           const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
-            attribution: '© OSM | @<a target="_blank" href="https://netizen-teknologi.github.io/react-native-maps-leaflet/">Netizen Teknologi</a>'
+            attribution: '© OSM | @<a target="_blank" href="https://github.com/gps-saas/codeartisan-react-native-leaflet-traccar">CodeArtisan</a>'
           }).addTo(map);
   
           // Add event listeners
