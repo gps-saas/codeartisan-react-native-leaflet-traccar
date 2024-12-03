@@ -1,6 +1,6 @@
 {
   "name": "@gps-saas/codeartisan-react-native-leaflet-traccar",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Codeartisan React Native Leaflet Traccar is an improvement of @netizen-teknologi/react-native-maps-leaflet, bringing powerful, interactive maps to React Native Traccar Custom apps with Leaflet. Ideal for real estate, travel, delivery tracking, and logistics.",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
