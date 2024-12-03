@@ -1,12 +1,13 @@
 {
   "name": "@gps-saas/codeartisan-react-native-leaflet-traccar",
   "version": "1.0.4",
-  "description": "Codeartisan React Native Leaflet Traccar React is a improvement of @netizen-teknologi/react-native-maps-leaflet which brings powerful, interactive maps to your React Native Traccar Custom app using Leaflet. Add custom markers, popups, and tile layers. Perfect for real estate, travel, delivery tracking, and logistics. Compatible with iOS and Android, it provides a seamless and dynamic map experience.",
-  "main": "index.tsx",
+  "description": "Codeartisan React Native Leaflet Traccar is an improvement of @netizen-teknologi/react-native-maps-leaflet, bringing powerful, interactive maps to React Native Traccar Custom apps with Leaflet. Ideal for real estate, travel, delivery tracking, and logistics.",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "react-native start",
-    "build": "react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ios/main.jsbundle --assets-dest ios"
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -22,15 +23,24 @@
     "react-native-maps-leaflet"
   ],
   "author": "gps-saas",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/gps-saas/codeartisan-react-native-leaflet-traccar",
   "bugs": {
     "url": "https://github.com/gps-saas/codeartisan-react-native-leaflet-traccar/issues"
   },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-native": "^0.74.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-native": "^0.73.0",
+    "typescript": "^5.7.2"
+  },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-native": "0.74.5",
-    "react-native-web": "~0.19.10",
-    "react-native-webview": "13.8.6"
+    "react-native-webview": "^13.8.6"
   }
 }

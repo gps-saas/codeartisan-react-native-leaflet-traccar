@@ -16,7 +16,7 @@ Codeartisan React Native Leaflet Traccar React is an improvement of @netizen-tek
 To install **CodeArtisan React Native Leaflet Traccar**, simply run the following command:
 
 ```bash
-npm install @gps-saas/codeartisan-react-native-leaflet-traccar
+npm install @gps-saas/codeartisan-react-native-leaflet-traccar --legacy-peer-deps 
 ```
 
 install dependencies
